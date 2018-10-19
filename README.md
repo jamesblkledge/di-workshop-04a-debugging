@@ -10,6 +10,7 @@ Fork & clone the repo like you would with a normal workshop.
 git clone https://github.com/adaapp/di-workshop-04a-debugging.git
 
 cd di-workshop-04a-debugging
+npm install
 npm start
 ```
 
