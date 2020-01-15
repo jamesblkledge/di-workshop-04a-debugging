@@ -6,8 +6,11 @@ function setup() {
 
 function draw() {
   background(220)
+
   drawScore()
   drawButton()
+
+  if(isMouseInButton) { cursor(HAND) }
 }
 
 function drawScore() {
@@ -31,15 +34,17 @@ function drawButton() {
 }
 
 function mousePressed() {
+  console.log("gets here")
   var shouldIncreaseScore = isMouseInButton()
+  console.log(shouldIncreaseScore)
   if (shouldIncreaseScore) {
     score = score + 1
   }
 }
 
 function isMouseInButton() {
-  var isInHorizontalRange = mousex < 100 && mouseX < 300
-  var isInVerticalRange = mouseY < 250 && mouseY < 320
+  var isInHorizontalRange = mouseX >= 100 && mouseX <= 300;
+  var isInVerticalRange = mouseY >= 250 && mouseY <= 320;
 
-  isInHorizontalRange && isInVerticalRange
+  return isInHorizontalRange && isInVerticalRange;
 }
